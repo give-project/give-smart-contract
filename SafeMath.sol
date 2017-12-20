@@ -1,22 +1,22 @@
-pragma solidity 0.4.20;
+pragma solidity 0.4.11;
 
 /**
  * Math operations with safety checks
  */
 library SafeMath {
-  
-  function add(uint a, uint b) internal returns (uint) {
+
+  function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
     assert(c >= a);
     return c;
   }
 
-  function divide(uint a, uint b) internal returns (uint) {
+  function safeDiv(uint a, uint b) internal returns (uint) {
     uint c = a / b;
     return c;
   }
 
-  function multiply(uint a, uint b) internal returns (uint) {
+  function safeMult(uint a, uint b) internal returns (uint) {
     uint c = a * b;
     assert(a == 0 || c / a == b);
     return c;
@@ -38,7 +38,7 @@ library SafeMath {
     return a < b ? a : b;
   }
 
-  function subtract(uint a, uint b) internal returns (uint) {
+  function safeSubtract(uint a, uint b) internal returns (uint) {
     assert(b <= a);
     return a - b;
   }
