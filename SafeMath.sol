@@ -4,25 +4,21 @@ pragma solidity 0.4.20;
  * Math operations with safety checks
  */
 library SafeMath {
-  function mul(uint a, uint b) internal returns (uint) {
-    uint c = a * b;
-    assert(a == 0 || c / a == b);
+  
+  function add(uint a, uint b) internal returns (uint) {
+    uint c = a + b;
+    assert(c >= a);
     return c;
   }
 
-  function div(uint a, uint b) internal returns (uint) {
+  function divide(uint a, uint b) internal returns (uint) {
     uint c = a / b;
     return c;
   }
 
-  function sub(uint a, uint b) internal returns (uint) {
-    assert(b <= a);
-    return a - b;
-  }
-
-  function add(uint a, uint b) internal returns (uint) {
-    uint c = a + b;
-    assert(c >= a);
+  function multiply(uint a, uint b) internal returns (uint) {
+    uint c = a * b;
+    assert(a == 0 || c / a == b);
     return c;
   }
 
@@ -40,6 +36,11 @@ library SafeMath {
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
     return a < b ? a : b;
+  }
+
+  function subtract(uint a, uint b) internal returns (uint) {
+    assert(b <= a);
+    return a - b;
   }
 
   function assert(bool assertion) internal {

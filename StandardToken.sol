@@ -11,7 +11,6 @@ contract Token {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 
-
 /*  ERC 20 token */
 contract StandardToken is Token {
 
